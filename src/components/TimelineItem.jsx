@@ -4,11 +4,11 @@ export default function TimelineItem({ timeline }) {
     <ol className="relative flex flex-col border-l border-black dark:border-stone-200 md:flex-row">
       <li className="mb-10">
         <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-black bg-black dark:border-white dark:bg-stone-200 " />
-        <p className="ml-4 flex flex-row flex-wrap items-center justify-start gap-2 text-xs md:text-sm">
+        <p className="ml-4 flex flex-col flex-wrap items-start justify-start gap-2 text-xs md:flex-row md:items-center md:text-sm">
           <span className="inline-block rounded-md bg-steel px-2 py-1 font-semibold text-white dark:bg-vanilla dark:text-black">
             {year}
           </span>
-          <span className="text-graphite text-lg font-semibold dark:text-white">
+          <span className="text-graphite text-sm font-semibold dark:text-white md:text-lg">
             {title}
           </span>
         </p>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 //icons
 import { BsSun, BsMoon } from "react-icons/bs";
@@ -12,6 +12,7 @@ import About from "./components/About";
 
 function App() {
   const [theme, setTheme] = useState(null);
+  const [hasScrolled, sethasScrolled] = useState(false);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -19,6 +20,9 @@ function App() {
     } else {
       setTheme("light");
     }
+    document.addEventListener("scroll", handleScroll);
+
+    return () => document.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleThemeSwitch = () => {
@@ -33,12 +37,26 @@ function App() {
     }
   }, [theme]);
 
+  const handleScroll = (e) => {
+    if (document.documentElement.clientWidth < 650) {
+      if (document.documentElement.scrollTop > 0) {
+        sethasScrolled(true);
+      } else {
+        sethasScrolled(false);
+      }
+    } else {
+      sethasScrolled(false);
+    }
+  };
+
   return (
     <>
       <button
         type="button"
         onClick={handleThemeSwitch}
-        className="fixed right-20 top-4 z-10 rounded-md bg-steel p-2 text-xl text-white dark:bg-vanilla dark:text-black"
+        className={`${
+          hasScrolled ? "invisible" : ""
+        } fixed right-10 top-4 z-10 rounded-md bg-steel p-2 text-xl text-white dark:bg-vanilla dark:text-black lg:right-20`}
       >
         {theme === "dark" ? <BsSun /> : <BsMoon />}
       </button>
