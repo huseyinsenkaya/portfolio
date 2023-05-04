@@ -63,7 +63,7 @@ function App() {
       <div className="flex flex-col items-center justify-center gap-8 px-6 pb-8 pt-20 text-center dark:bg-charcoal dark:text-white">
         <Intro />
         <About />
-        {/* <Portfolio /> */}
+        <Portfolio />
         <Timeline />
         <Footer />
       </div>

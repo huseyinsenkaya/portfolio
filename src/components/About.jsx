@@ -10,9 +10,9 @@ export default function About() {
         About
       </h3>
       <p className="text-left text-sm md:text-lg">
-        Hello! I'm a passionate junior software and web developer skilled in
-        Vue.js, with a growing interest in React. I'm captivated by the world of
-        3D modeling, and I'm currently expanding my expertise by learning the
+        Hello there! I'm a passionate junior software and web developer skilled
+        in Vue.js, with a growing interest in React. I'm captivated by the world
+        of 3D modeling, and I'm currently expanding my expertise by learning the
         Three.js library. In my free time, I find joy in creating intricate
         pixel art, blending my love for technology and creative expression.
       </p>
